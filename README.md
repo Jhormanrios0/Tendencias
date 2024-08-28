@@ -29,4 +29,6 @@ Además, se entregará documentación detallada y un desarrollo práctico que de
 
 ## UPDATES
 
-- En el directorio `documentacion/resolucion_866_2021.ipynb` se agregó contextualización de la resolución.
+- **28/08/2024**: En el directorio `documentacion/resolucion_866_2021.ipynb`, se agregó la contextualización de la resolución.
+- **28/08/2024**: En el directorio `entregaFinal/first.ipynb`, se inició un ejercicio de aprendizaje automático con un sistema avanzado de recomendación.
+
