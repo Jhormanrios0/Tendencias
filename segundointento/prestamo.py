@@ -1,18 +1,17 @@
-from informacionPrestatario import InformacionDelPrestatario
-
 class Prestamo:
-    def __init__(self, fecha, informacion_prestatario):
+    prestamos = []
+
+    def __init__(self, fecha, titulo, prestatario):
         self.fecha = fecha
-        self.informacion_prestatario = informacion_prestatario
+        self.titulo = titulo
+        self.prestatario = prestatario
 
-    def crear(self):
-        # Implementar lógica para crear un nuevo préstamo
-        return self
+    @classmethod
+    def crear(cls, fecha, titulo, prestatario):
+        nuevo_prestamo = cls(fecha, titulo, prestatario)
+        cls.prestamos.append(nuevo_prestamo)
+        return nuevo_prestamo
 
-    def destruir(self):
-        # Implementar lógica para destruir un préstamo
-        return True
-
-    def encontrar(self, id):
-        # Implementar lógica para encontrar un préstamo específico
-        return self
+    @classmethod
+    def listar(cls):
+        return cls.prestamos

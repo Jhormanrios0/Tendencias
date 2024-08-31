@@ -1,19 +1,16 @@
 class Ejemplar:
-    def __init__(self, id):
-        self.id = id
+    ejemplares = []
 
-    def encontrar_sobre_titulo(self, titulo):
-        
-        return []
+    def __init__(self, titulo, edicion):
+        self.titulo = titulo
+        self.edicion = edicion
 
-    def crear(self):
-        
-        return self
+    @classmethod
+    def crear(cls, titulo, edicion):
+        nuevo_ejemplar = cls(titulo, edicion)
+        cls.ejemplares.append(nuevo_ejemplar)
+        return nuevo_ejemplar
 
-    def destruir(self):
-        
-        return True
-
-    def encontrar(self, id):
-        
-        return self
+    @classmethod
+    def listar(cls):
+        return cls.ejemplares

@@ -1,6 +1,6 @@
 from titulo import Titulo
+class TituloLibro(Titulo):
+    tiempo_pendiente = 30  # Días de préstamo predeterminados
 
-class TituloDelLibro(Titulo):
-    def __init__(self, nombre, autor, isbn, numero_de_reserva, tiempo_pendiente=30):
-        super().__init__(nombre, autor, isbn, numero_de_reserva)
-        self.tiempo_pendiente = tiempo_pendiente
+    def __init__(self, nombre, autor, isbn, numero_reserva):
+        super().__init__(nombre, autor, isbn, numero_reserva)

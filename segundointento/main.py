@@ -1,92 +1,86 @@
 from ejemplar import Ejemplar
-from titulo import Titulo
-from tituloLibro import TituloDelLibro
-from tituloRevista import TituloDeRevista
+from informacionPrestatario import InformacionPrestatario
 from prestamo import Prestamo
 from reserva import Reserva
-from informacionPrestatario import InformacionDelPrestatario
+from titulo import Titulo
+from tituloLibro import TituloLibro
+from tituloRevista import TituloRevista
 
 def main():
     while True:
-        
-        libros = []
-        ejemplares = []
-        prestamos = []
-        revistas = []
-        reservas = []
+        print("1. Crear Título del Libro")
+        print("2. Crear Título de Revista")
+        print("3. Crear Ejemplar")
+        print("4. Crear Préstamo")
+        print("5. Crear Reserva")
+        print("6. Crear Información del Prestatario")
+        print("7. Encontrar Título")
+        print("8. Destruir Título")
+        print("9. Salir")
+        opcion = input("Elige una opción: ")
 
-        
-        nombre_prestatario = input("Ingrese el nombre del prestatario: ")
-        direccion_prestatario = input("Ingrese la dirección del prestatario: ")
-        prestatario = InformacionDelPrestatario(nombre=nombre_prestatario, direccion=direccion_prestatario)
+        if opcion == '1':
+            nombre = input("Nombre del título del libro: ")
+            autor = input("Autor: ")
+            isbn = input("ISBN: ")
+            numero_reserva = int(input("Número de reserva: "))
+            TituloLibro.crear(nombre, autor, isbn, numero_reserva)
+            print(f"Título del libro '{nombre}' creado exitosamente.")
 
-        
-        cantidad_libros = int(input("¿Cuántos libros desea ingresar? "))
-        for _ in range(cantidad_libros):
-            nombre_libro = input("Ingrese el nombre del libro: ")
-            autor_libro = input("Ingrese el autor del libro: ")
-            isbn_libro = input("Ingrese el ISBN del libro: ")
-            numero_reserva_libro = input("Ingrese el número de reserva del libro: ")
-            libro = TituloDelLibro(nombre=nombre_libro, autor=autor_libro, isbn=isbn_libro, numero_de_reserva=numero_reserva_libro)
-            libro.crear()
-            libros.append(libro)
+        elif opcion == '2':
+            nombre = input("Nombre del título de la revista: ")
+            autor = input("Autor: ")
+            isbn = input("ISBN: ")
+            numero_reserva = int(input("Número de reserva: "))
+            TituloRevista.crear(nombre, autor, isbn, numero_reserva)
+            print(f"Título de la revista '{nombre}' creado exitosamente.")
 
-            
-            id_ejemplar_libro = int(input("Ingrese el ID del ejemplar del libro: "))
-            ejemplar_libro = Ejemplar(id=id_ejemplar_libro)
-            ejemplar_libro.crear()
-            ejemplares.append(ejemplar_libro)
+        elif opcion == '3':
+            titulo = input("Título del ejemplar: ")
+            edicion = input("Edición: ")
+            Ejemplar.crear(titulo, edicion)
+            print(f"Ejemplar del título '{titulo}' creado exitosamente.")
 
-        
-        fecha_prestamo = input("Ingrese la fecha del préstamo (YYYY-MM-DD): ")
-        prestamo = Prestamo(fecha=fecha_prestamo, informacion_prestatario=prestatario)
-        prestamo.crear()
-        prestamos.append(prestamo)
+        elif opcion == '4':
+            fecha = input("Fecha del préstamo: ")
+            titulo = input("Título del préstamo: ")
+            Prestamo.crear(fecha, titulo)
+            print(f"Préstamo del título '{titulo}' creado exitosamente.")
 
-        
-        cantidad_revistas = int(input("¿Cuántas revistas desea ingresar? "))
-        for _ in range(cantidad_revistas):
-            nombre_revista = input("Ingrese el nombre de la revista: ")
-            autor_revista = input("Ingrese el autor de la revista: ")
-            isbn_revista = input("Ingrese el ISBN de la revista: ")
-            numero_reserva_revista = input("Ingrese el número de reserva de la revista: ")
-            revista = TituloDeRevista(nombre=nombre_revista, autor=autor_revista, isbn=isbn_revista, numero_de_reserva=numero_reserva_revista)
-            revista.crear()
-            revistas.append(revista)
+        elif opcion == '5':
+            fecha = input("Fecha de la reserva: ")
+            titulo = input("Título de la reserva: ")
+            Reserva.crear(fecha, titulo)
+            print(f"Reserva del título '{titulo}' creada exitosamente.")
 
-        
-        fecha_reserva = input("Ingrese la fecha de la reserva (YYYY-MM-DD): ")
-        reserva = Reserva(fecha=fecha_reserva, informacion_prestatario=prestatario)
-        reserva.crear()
-        reservas.append(reserva)
+        elif opcion == '6':
+            nombre = input("Nombre del prestatario: ")
+            direccion = input("Dirección: ")
+            telefono = input("Teléfono: ")
+            InformacionPrestatario.crear(nombre, direccion, telefono)
+            print(f"Información del prestatario '{nombre}' creada exitosamente.")
 
-        
-        print("\nLibros:")
-        for libro in libros:
-            print(f"Nombre: {libro.nombre}, Autor: {libro.autor}, ISBN: {libro.isbn}, Número de Reserva: {libro.numero_de_reserva}")
+        elif opcion == '7':
+            nombre = input("Nombre del título a encontrar: ")
+            titulo = Titulo.encontrar(nombre)
+            if titulo:
+                print(f"Título encontrado: {titulo.nombre}, Autor: {titulo.autor}, ISBN: {titulo.isbn}, Número de reserva: {titulo.numero_reserva}")
+            else:
+                print(f"Título '{nombre}' no encontrado.")
 
-        print("\nEjemplares:")
-        for ejemplar in ejemplares:
-            print(f"ID: {ejemplar.id}")
+        elif opcion == '8':
+            nombre = input("Nombre del título a destruir: ")
+            if Titulo.destruir(nombre):
+                print(f"Título '{nombre}' destruido exitosamente.")
+            else:
+                print(f"Título '{nombre}' no encontrado.")
 
-        print("\nPréstamos:")
-        for prestamo in prestamos:
-            print(f"Fecha: {prestamo.fecha}, Prestatario: {prestamo.informacion_prestatario.nombre}")
-
-        print("\nRevistas:")
-        for revista in revistas:
-            print(f"Nombre: {revista.nombre}, Autor: {revista.autor}, ISBN: {revista.isbn}, Número de Reserva: {revista.numero_de_reserva}")
-
-        print("\nReservas:")
-        for reserva in reservas:
-            print(f"Fecha: {reserva.fecha}, Prestatario: {reserva.informacion_prestatario.nombre}")
-
-        
-        continuar = input("\n¿Desea llenar otro formulario? (s/n): ")
-        if continuar.lower() != 's':
+        elif opcion == '9':
+            print("Saliendo del programa...")
             break
 
-    print("\nMucas gracias por usar el sistema Profe. Merezco un 5.0.")
+        else:
+            print("Opción no válida. Por favor, elige una opción del 1 al 9.")
 
 if __name__ == "__main__":
     main()

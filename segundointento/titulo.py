@@ -1,18 +1,33 @@
 class Titulo:
-    def __init__(self, nombre, autor, isbn, numero_de_reserva):
+    titulos = []
+
+    def __init__(self, nombre, autor, isbn, numero_reserva):
         self.nombre = nombre
         self.autor = autor
         self.isbn = isbn
-        self.numero_de_reserva = numero_de_reserva
+        self.numero_reserva = numero_reserva
 
-    def encontrar(self, nombre):
-        # Implementar lógica para encontrar un título
-        return self
+    @classmethod
+    def crear(cls, nombre, autor, isbn, numero_reserva):
+        nuevo_titulo = cls(nombre, autor, isbn, numero_reserva)
+        cls.titulos.append(nuevo_titulo)
+        return nuevo_titulo
 
-    def crear(self):
-        # Implementar lógica para crear un nuevo título
-        return self
+    @classmethod
+    def destruir(cls, nombre):
+        titulo = cls.encontrar(nombre)
+        if titulo:
+            cls.titulos.remove(titulo)
+            return True
+        return False
 
-    def destruir(self):
-        # Implementar lógica para destruir un título
-        return True
+    @classmethod
+    def encontrar(cls, nombre):
+        for titulo in cls.titulos:
+            if titulo.nombre == nombre:
+                return titulo
+        return None
+
+    @classmethod
+    def listar(cls):
+        return cls.titulos
