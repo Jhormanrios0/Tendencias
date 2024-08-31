@@ -25,11 +25,10 @@ Además, se entregará documentación detallada y un desarrollo práctico que de
 
 ## Link documento Principal
 
-- https://tecnologicodeantioquia-my.sharepoint.com/:w:/g/personal/juan_morales74_correo_tdea_edu_co/EWGsMUd3xUVKul5C_n3Fgb4BfVJUBGjAJY_76AV1oPIN7A?rtime=40hzaJTH3Eg
+- https://tecnologicodeantioquia-my.sharepoint.com/:w:/r/personal/juan_morales74_correo_tdea_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B4A1AD190-CD2E-45E5-BA71-ADD67C544196%7D&file=BIgDataDocument.docx&action=default&mobileredirect=true
 
 ## UPDATES
 
 - **28/08/2024**: En el directorio `documentacion/resolucion_866_2021.ipynb`, se agregó la contextualización de la resolución.
 - **28/08/2024**: En el directorio `entregaFinal/first.ipynb`, se inició un ejercicio de aprendizaje automático con un sistema avanzado de recomendación.
-    ° Implementación de Datasets, Limpieza, organización de datos
-
+  ° Implementación de Datasets, Limpieza, organización de datos
