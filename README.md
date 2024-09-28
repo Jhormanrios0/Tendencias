@@ -29,6 +29,9 @@ Además, se entregará documentación detallada y un desarrollo práctico que de
 
 - https://www.canva.com/design/DAGRoU3NVu0/jBaAPQNO2C6W09UhLmCvpw/edit?utm_content=DAGRoU3NVu0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton (link de canva)
 
+- https://dbdiagram.io/d/66e5fa8c6dde7f41492038ad
+
+
 ## UPDATES
 
 - **28/08/2024**: En el directorio `documentacion/resolucion_866_2021.ipynb`, se agregó la contextualización de la resolución.
