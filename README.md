@@ -8,18 +8,7 @@ Además, se entregará documentación detallada y un desarrollo práctico que de
 
 ## Características
 
-- **Recolección de Datos:** Recopilación de datos de diversas fuentes.
-- **Procesamiento de Datos:** Limpieza y transformación de datos en bruto a un formato utilizable.
-- **Análisis de Datos:** Aplicación de técnicas estadísticas y de aprendizaje automático para analizar los datos.
-- **Visualización de Datos:** Creación de representaciones visuales de los datos para comunicar los hallazgos de manera efectiva.
-
 ## Tecnologías Utilizadas
-
-- Hadoop
-- Spark
-- Python
-- SQL
-- Tableau
 
 (todavia no se define cuales xD eso es puro relleno)
 
@@ -29,8 +18,8 @@ Además, se entregará documentación detallada y un desarrollo práctico que de
 
 - https://www.canva.com/design/DAGRoU3NVu0/jBaAPQNO2C6W09UhLmCvpw/edit?utm_content=DAGRoU3NVu0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton (link de canva)
 
+-
+
 ## UPDATES
 
 - **28/08/2024**: En el directorio `documentacion/resolucion_866_2021.ipynb`, se agregó la contextualización de la resolución.
-- **28/08/2024**: En el directorio `entregaFinal/first.ipynb`, se inició un ejercicio de aprendizaje automático con un sistema avanzado de recomendación.
-  ° Implementación de Datasets, Limpieza, organización de datos
