@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b!_f9sqy8%6a$qth5kt)^5v%%g1pbq*2d!=)dftutji%f$dt&i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myapp',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +76,12 @@ WSGI_APPLICATION = 'clinicaTendencias.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'postgres',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Juan990Postgres*',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'qrAwqJnVaEWVJpraKsRrQvLkhngfejSN',
+        'HOST': 'junction.proxy.rlwy.net',
+        'PORT': '39109',
     }
 }
 
